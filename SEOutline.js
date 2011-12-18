@@ -7,6 +7,7 @@
   }
   // If the elements don't exist, create them
   else {
+    // Create an element that will be cloned for performance
     var span = $('<span></span>')
       .addClass('SEOutline')
       .css({
@@ -22,6 +23,7 @@
     $('h1, h2, h3, h4, h5, h6').each(function() {
       // Prepend at every heading tag
       $(this).prepend(
+        // Clone the element precedently created
         span.clone().text(this.nodeName)
       );
     });
